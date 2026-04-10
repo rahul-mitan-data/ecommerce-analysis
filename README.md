@@ -2,13 +2,17 @@
   
   ## Project Overview
   
-  This project focuses on analyzing an e-commerce dataset using SQL to extract meaningful business insights.
+  This project focus on analyzing an e-commerce dataset using SQL,Excel to extract meaningful business insights.
   The goal is to understand customer behavior, sales performance, and operational efficiency.
   
-  ---
+  ## Objectives
+ * Identify top-selling product categories
+ * Analyze customer purchase behavior
+ * Calculate total revenue and growth trends
+ * Find repeat customers
   
   ##  Dataset Information
-  
+  * source : kaggle 
   The dataset contains the following tables:
   
   * **customers** : customer details
@@ -16,9 +20,14 @@
   * **order_items** : product-level order data
   * **payment** : payment transactions
   * **product** : product & category details
+ 
+  ##  Tools & Technlogy Used
   
-  ---
-  
+  * SQL (MySQL)
+  * Power bi
+  * GitHub
+  * Ms-Excel 
+    
   ##  Business Problems Solved
   
   ### 1. Overall Performance Analysis
@@ -73,19 +82,11 @@
   
   ---
   
-  ##  Tools & Skills Used
-  
-  * SQL (Joins, Aggregations, Window Functions)
-  * Data Analysis
-  * Business Insight Generation
-  
-  ---
-  
   ##  Project Files
   
   * `queries.sql` → All SQL queries used in analysis
   * `insights.pdf` → Business insights & summary
-  * `dashboard.pbix` → Power BI dashboard (if available)
+  * `dashboard.pbix` → Power BI dashboard 
   
   ---
   
@@ -98,5 +99,5 @@
   
   ##  Author
   
-  **Rahul Mittan**
+  **Rahul Mitan**
   Aspiring Data Analyst
