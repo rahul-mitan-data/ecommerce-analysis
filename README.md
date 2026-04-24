@@ -86,7 +86,13 @@
   
   * `queries.sql` → All SQL queries used in analysis
   * `insights.pdf` → Business insights & summary
-  * `dashboard.pbix` → Power BI dashboard 
+  * `dashboard.pbix` → Power BI dashboard
+
+##  Dashboard Overview
+![Overview](images/overview.png)
+
+##  Sales Analysis
+![Sales](images/sales.png)
   
   ---
   
