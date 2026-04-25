@@ -2,7 +2,7 @@
   
   ## Project Overview
   
-  This project focus on analyzing an e-commerce dataset using SQL,Excel to extract meaningful business insights.
+  This project focus on analyzing an e-commerce dataset using SQL,Power Bi,Excel to extract meaningful business insights.
   The goal is to understand customer behavior, sales performance, and operational efficiency.
   
   ## Objectives
@@ -36,10 +36,12 @@
   * Total customers
   * Order status distribution
   * Delivery performance
+  * Average order value
   
   ### 2. Revenue Analysis
   
   * Category-wise revenue
+  * Month-wise revenue trend
   * Top revenue-generating categories
   * Payment method contribution
   
@@ -47,7 +49,7 @@
   
   * Repeat vs new customers
   * Customer segmentation using RFM (Recency, Frequency, Monetary)
-  * Inactive customers (last 6 months no purchase)
+  * Inactive customers 
   
   ### 4. Product Analysis
   
@@ -59,6 +61,10 @@
   * Customer segmentation using CASE statements
   * Percentage contribution using window functions
   * Order funnel analysis (approved → shipped → delivered)
+
+### 6. Delivery Analysis
+  
+  * Average delivery time
   
   ---
   
@@ -79,6 +85,28 @@
   *  Promote **high-performing payment methods** for smoother transactions
   *  Reduce cancellations by improving order confirmation & logistics
   *  Invest more in **top-performing categories** to maximize revenue
+
+Dashboard Overview
+
+An interactive dashboard was created in Power BI to visualize:
+
+Revenue trends over time
+Category performance
+Customer contribution
+Payment method distribution
+Order status
+🧠 Key Insights
+❗ No repeat customers found → indicates low customer retention
+📊 A few categories contribute to the majority of revenue
+💳 Credit card is the most preferred payment method
+📦 Most orders are successfully delivered, but a small percentage are canceled
+🚚 Average delivery time indicates scope for improvement
+💡 Business Recommendations
+🎯 Introduce loyalty programs to improve customer retention
+📈 Focus on high-performing categories to maximize revenue
+❌ Reduce cancellations by improving order processing
+🚚 Optimize delivery operations to improve customer satisfaction
+💳 Promote efficient payment methods for smoother transactions
   
   ---
   
