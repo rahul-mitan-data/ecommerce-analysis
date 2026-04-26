@@ -117,6 +117,7 @@ Order status
   * `dashboard.pbix` → Power BI dashboard
 
 ##  Dashboard Overview
+
 ![Overview](images/overview.png)
 
 ##  Sales Analysis
