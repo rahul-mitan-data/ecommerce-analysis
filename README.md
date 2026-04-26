@@ -120,10 +120,10 @@ Order status
  Power BI Dashboard file is available in the repository (dashboard.pbix)
 
 ### Page 1
-![Dashboard Page 1](images/dashboard-page1.png)
+![Dashboard Page 1](images/dashboard page-1.png)
 
 ### Page 2
-![Dashboard Page 2](images/dashboard-page2.png)
+![Dashboard Page 2](images/dashboard page-2.png)
   
   ---
   
