@@ -117,7 +117,7 @@ Order status
   * `dashboard.pbix` → Power BI dashboard
 
 ##  Dashboard Overview
-
+ Power BI Dashboard file is available in the repository (dashboard.pbix)
 ![Overview](images/overview.png)
 
 ##  Sales Analysis
