@@ -92,15 +92,24 @@ FROM (
 ) t
 WHERE total_orders = 1;
 
--- Inactive Customers (last 6 months)
+-- Inactive Customers  (last 6 months)
+
 SELECT 
-  c.customer_unique_id
-FROM customers c
-LEFT JOIN orders o 
-  ON c.customer_id = o.customer_id
-GROUP BY c.customer_unique_id
-HAVING MAX(o.order_purchase_timestamp) < CURDATE() - INTERVAL 6 MONTH
-   OR MAX(o.order_purchase_timestamp) IS NULL;
+    COUNT(*) AS inactive_customers,
+    ROUND(
+        COUNT(*) * 100.0 / 
+        (SELECT COUNT(DISTINCT customer_unique_id) FROM customers),
+    2) AS inactive_percentage
+FROM (
+    SELECT c.customer_unique_id
+    FROM customers c
+    LEFT JOIN orders o 
+        ON c.customer_id = o.customer_id
+    GROUP BY c.customer_unique_id
+    HAVING MAX(o.order_purchase_timestamp) < 
+           (SELECT MAX(order_purchase_timestamp) FROM orders) - INTERVAL 6 MONTH
+       OR MAX(o.order_purchase_timestamp) IS NULL
+) AS t;
 
 
 --  SECTION 4: PRODUCT ANALYSIS
@@ -142,26 +151,36 @@ FROM orders;
 --  SECTION 6: ADVANCED ANALYSIS 
 
 -- Customer Segmentation (RFM)
-SELECT *,
-CASE 
-  WHEN recency <= 30 AND frequency >= 5 THEN 'Best Customers'
-  WHEN recency <= 30 THEN 'Recent Customers'
-  WHEN recency > 90 THEN 'Lost Customers'
-  ELSE 'Regular Customers'
-END AS segment
+SELECT 
+  segment,
+  COUNT(*) AS total_customers,
+  ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS percentage
 FROM (
-  SELECT 
-    c.customer_unique_id,
-    DATEDIFF(CURDATE(), MAX(o.order_purchase_timestamp)) AS recency,
-    COUNT(o.order_id) AS frequency,
-    SUM(p.payment_value) AS monetary
-  FROM customers c
-  LEFT JOIN orders o 
-    ON c.customer_id = o.customer_id
-  LEFT JOIN payment p 
-    ON p.order_id = o.order_id
-  GROUP BY c.customer_unique_id
-) t;
+  SELECT *,
+    CASE 
+      WHEN recency <= 30 AND frequency >= 5 THEN 'Best Customers'
+      WHEN recency <= 30 THEN 'Recent Customers'
+      WHEN recency > 90 THEN 'Lost Customers'
+      ELSE 'Regular Customers'
+    END AS segment
+  FROM (
+    SELECT 
+      c.customer_unique_id,
+      DATEDIFF(
+        (SELECT MAX(order_purchase_timestamp) FROM orders),
+        MAX(o.order_purchase_timestamp)
+      ) AS recency,
+      COUNT(o.order_id) AS frequency,
+      SUM(p.payment_value) AS monetary
+    FROM customers c
+    LEFT JOIN orders o 
+      ON c.customer_id = o.customer_id
+    LEFT JOIN payment p 
+      ON p.order_id = o.order_id
+    GROUP BY c.customer_unique_id
+  ) t
+) x
+GROUP BY segment;
 
 
 -- Ranking Customers by Spend
