@@ -10,6 +10,8 @@
  * Analyze customer purchase behavior
  * Calculate total revenue and growth trends
  * Find repeat customers
+ * To analyze delivery performance 
+
   
   ##  Dataset Information
   * source : kaggle 
@@ -47,9 +49,9 @@
   
   ### 3. Customer Analysis
   
-  * Repeat vs new customers
+  * Repeat customers
   * Customer segmentation using RFM (Recency, Frequency, Monetary)
-  * Inactive customers 
+  * active customers 
   
   ### 4. Product Analysis
   
@@ -64,7 +66,8 @@
 
 ### 6. Delivery Analysis
   
-  * Average delivery time
+  * Average Estimated delivery time
+  * Avg approval time
   
   ---
   
@@ -112,9 +115,9 @@ Order status
   
   ##  Project Files
   
-  * `queries.sql` → All SQL queries used in analysis
-  * `insights.pdf` → Business insights & summary
-  * `dashboard.pbix` → Power BI dashboard
+  * queries.sql : All SQL queries used in analysis
+  * data folder : CSV Files of dataset
+    
 
 ##  Dashboard Overview
  Power BI Dashboard file is available in the repository (dashboard.pbix)
@@ -129,7 +132,7 @@ Order status
   
   ##  Conclusion
   
-  This project demonstrates how raw data can be transformed into actionable business insights using SQL.
+  This project demonstrates how raw data can be transformed into actionable business insights using SQL, Power Bi.
   It highlights the importance of data-driven decision-making in e-commerce.
   
   ---
