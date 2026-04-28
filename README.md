@@ -97,41 +97,31 @@
   *  Some product categories generate significantly higher revenue
 
 
+
   ---
   
   ##  Business Recommendations
-  
-  *  Focus on **repeat customers** with loyalty programs and offers to increase retention
-  *  Convert recent and new customers into loyal customers
-  *  Re-engagement campaigns should be implemented (email/SMS offers).Discounts and personalized offers can help bring back       **inactive customers**. Focus on improving customer retention strategies
-  *  Improve **delivery time** to enhance customer satisfaction
-  *  Promote other payment options like wallets/UPI and offer cashback on them.
-  *  Reduce cancellations by improving order confirmation & logistics
-  *  Invest more in **top-performing categories** to maximize revenue
-  *  ## 🚀 Business Recommendations
 
 *  Focus on improving **customer retention** by introducing loyalty programs, rewards, and special offers for repeat customers  
-   → Impact: Increases repeat purchase rate and long-term revenue stability  
+    Impact: Increases repeat purchase rate and long-term revenue stability  
 
-*  Convert **new and recent customers** into loyal customers through personalized offers
-
-*   
-   → Impact: Improves customer lifetime value (CLV)  
+*  Convert **new and recent customers** into loyal customers through personalized offers  
+    Impact: Improves customer lifetime value (CLV)  
 
 *  Implement **re-engagement campaigns** (email/SMS, discounts, personalized recommendations) to bring back inactive customers  
-   → Impact: Recovers lost customers and boosts overall sales  
+    Impact: Recovers lost customers and boosts overall sales  
 
 *  Optimize and reduce **delivery time** by improving logistics and shipping processes  
-   → Impact: Enhances customer satisfaction and increases repeat purchases  
+    Impact: Enhances customer satisfaction and increases repeat purchases  
 
 *  Promote alternative payment methods (wallets/UPI equivalents) with cashback and offers to reduce dependency on credit cards  
-   → Impact: Diversifies payment risk and improves user flexibility  
+    Impact: Diversifies payment risk and improves user flexibility  
 
 *  Reduce **order cancellations** by improving order confirmation, communication, and logistics coordination  
-   → Impact: Increases successful order completion rate  
+    Impact: Increases successful order completion rate  
 
 *  Invest more in **top-performing product categories** through marketing and inventory planning  
-   → Impact: Maximizes revenue and business growth  
+    Impact: Maximizes revenue and business growth  
 
 
   ---
