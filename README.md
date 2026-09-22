@@ -4,7 +4,7 @@
   
   This project focus on analyzing an e-commerce dataset using SQL,Power Bi,Excel to extract meaningful business insights.
   The goal is to understand customer behavior, sales performance, and operational efficiency.
-  
+  The analysis covers ₹16.01M revenue, 99K+ orders and 96K+ customers and converts raw transactional data into business-focused insights and recommendations.
   ## Objectives
  * Identify top-selling product categories
  * Analyze customer purchase behavior
@@ -46,12 +46,13 @@
   * Month-wise revenue trend
   * Top revenue-generating categories
   * Payment method contribution
+  * RFM Revenue by Segment
   
   ### 3. Customer Analysis
   
   * Repeat customers
   * Customer segmentation using RFM (Recency, Frequency, Monetary)
-  * active customers 
+  * Customer type (one time , Repeat Customer) wise revenue %
   
   ### 4. Product Analysis
   
@@ -66,8 +67,9 @@
 
 ### 6. Delivery Analysis
   
-  * Average Estimated delivery time
+  * Average delivery time
   * Avg approval time
+  * Avg Review Score gap analysis
   
   ---
   
@@ -89,12 +91,13 @@
   ---
    ##  Key Insights
   *  Credit card is the most preferred payment method
-  *  Around 90% customers fall into the Lost segment. This is influenced by the dataset timeline (2016–2018), where older         customers naturally appear inactive. However, it still highlights a low repeat purchase behavior in the dataset
+  * RFM-based segmentation classified **90.04% of customers as Lost** based on a 90+ day recency threshold.
   *  A significant number of customers (67,580) are inactive for more than 6 months. This indicates a high customer churn
      rate. A large portion of users are not returning after initial purchase
-  *  Most orders are successfully delivered, but a small percentage are canceled
-  *  Average estimated delivery time indicates potential logistics improvement
-  *  Some product categories generate significantly higher revenue
+  *  Repeat customers represented only **3.12% of the customer base**.They contributed **5.90% of total revenue**.
+  *  **One-time customers contributed 94.10% of revenue**. This highlights the importance of understanding customer retention and repeat-purchase behavior.
+  *  Delayed deliveries had a lower average review score than on-time deliveries. The dashboard identified a **1.73-point gap** between the average review scores of the two delivery-status groups.
+  *  Top 5 product categories contributed 40.79% of total revenue.
 
 
 
