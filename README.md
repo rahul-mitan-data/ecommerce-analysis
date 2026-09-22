@@ -22,7 +22,7 @@
   * **order_items** : product-level order data
   * **payment** : payment transactions
   * **product** : product & category details
- 
+ Dataset period: September 2016 to August 2018, with partial coverage in 2016 and 2018.
   ##  Tools & Technlogy Used
   
   * SQL (MySQL)
