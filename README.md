@@ -80,14 +80,16 @@
     
 
 ##  Dashboard Overview
- Power BI Dashboard file is available in the repository (dashboard.pbix)
+ 
 
 ### Page 1
-![Dashboard Page-1](images/dashboard page-1.png)
+![Dashboard Page-1](images/ecommerce_page-1.png)
 
 ### Page 2
-![Dashboard Page-2](images/dashboard page-2.png)
-  
+![Dashboard Page-2](images/ecommerce_page-2.png)
+
+### Page 3
+![Dashboard Page-3](images/ecommerce_page-2.png)
   ---
    ##  Key Insights
   *  Credit card is the most preferred payment method
