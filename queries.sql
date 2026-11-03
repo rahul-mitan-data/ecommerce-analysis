@@ -150,37 +150,30 @@ FROM orders;
 
 --  SECTION 6: ADVANCED ANALYSIS 
 
--- Customer Segmentation (RFM)
-SELECT 
-  segment,
-  COUNT(*) AS total_customers,
-  ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS percentage
-FROM (
-  SELECT *,
-    CASE 
-      WHEN recency <= 30 AND frequency >= 5 THEN 'Best Customers'
-      WHEN recency <= 30 THEN 'Recent Customers'
-      WHEN recency > 90 THEN 'Lost Customers'
-      ELSE 'Regular Customers'
-    END AS segment
-  FROM (
-    SELECT 
-      c.customer_unique_id,
-      DATEDIFF(
-        (SELECT MAX(order_purchase_timestamp) FROM orders),
-        MAX(o.order_purchase_timestamp)
-      ) AS recency,
-      COUNT(o.order_id) AS frequency,
-      SUM(p.payment_value) AS monetary
-    FROM customers c
-    LEFT JOIN orders o 
-      ON c.customer_id = o.customer_id
-    LEFT JOIN payment p 
-      ON p.order_id = o.order_id
-    GROUP BY c.customer_unique_id
-  ) t
-) x
-GROUP BY segment;
+-- RFM Segmentation 
+WITH customer_rfm AS (
+ SELECT c.customer_unique_id,
+ DATEDIFF((SELECT MAX(order_purchase_timestamp) FROM orders), MAX(o.order_purchase_timestamp)) AS recency,
+ COUNT(DISTINCT o.order_id) AS frequency,
+ COALESCE(SUM(p.payment_value),0) AS monetary
+ FROM customers c
+ INNER JOIN orders o ON c.customer_id=o.customer_id
+ LEFT JOIN payment p ON o.order_id=p.order_id
+ GROUP BY c.customer_unique_id
+),
+customer_segments AS (
+ SELECT *, CASE 
+ WHEN recency<=30 AND frequency>=5 THEN 'Best Customers'
+ WHEN recency<=30 THEN 'Recent Customers'
+ WHEN recency<=90 THEN 'Regular Customers'
+ ELSE 'Lost Customers' END AS segment
+ FROM customer_rfm
+)
+SELECT segment, COUNT(*) AS customer_count,
+ ROUND(COUNT(*)*100.0/SUM(COUNT(*)) OVER (),2) AS customer_percentage
+FROM customer_segments
+GROUP BY segment
+ORDER BY customer_count DESC;
 
 
 -- Ranking Customers by Spend
